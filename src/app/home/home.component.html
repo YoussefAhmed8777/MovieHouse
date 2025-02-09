@@ -1,0 +1,46 @@
+<header class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-5 mb-3">
+        <div class="caption text-center">
+          <h1>TRENDING MOVIES</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      @for (movie of movieList; track $index) {
+        @if (movie.id>=5) {
+          @defer () {
+            <div class="col-md-3">
+              <div class="card movie rounded h-100">
+                <div class="movie-img">
+                  <img [src]="imgBaseUrl+movie.poster_path" class="w-100" alt="poster">
+                </div>
+                <div class="movie-body p-3">
+                  <h3>{{movie.name}}{{movie.title}}</h3>
+                  <p>{{movie.overview}}</p>
+                  <div class="movie-data">
+                    <span class="badge text-bg-danger me-2">Rating: {{movie.vote_average}}/10</span>
+                    <span class="badge text-bg-danger">Voters: {{movie.vote_count}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        }@else {
+          <div class="col-md-3">
+            <div class="card movie p-3 h-100">
+              <div class="movie-img">
+                <img [src]="imgBaseUrl+movie.poster_path" class="w-100" alt="poster">
+              </div>
+              <div class="movie-body">
+                <h3>{{movie.name}}</h3>
+                <p>{{movie.overview}}</p>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</header>
