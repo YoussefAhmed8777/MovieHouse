@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  scroll:boolean=false;
+  @HostListener('window:scroll') onScroll(){
+    if(scrollY>0){
+      this.scroll=true;
+    }else{
+      this.scroll=false;
+    }
+  }
 }
