@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       next:(res)=>{
         // console.log(res)
         this.movieList = res.results
-        console.log(this.movieList)
+        // console.log(this.movieList)
       },error:(error)=>{
         console.log(error)
       }

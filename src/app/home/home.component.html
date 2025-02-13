@@ -18,11 +18,11 @@
                 </div>
                 <div class="movie-body p-3">
                   <h3>{{movie.name}}{{movie.title}}</h3>
-                  <p>{{movie.overview}}</p>
-                  <div class="movie-data">
+                  <div class="movie-data my-2">
                     <span class="badge text-bg-danger me-2">Rating: {{movie.vote_average}}/10</span>
                     <span class="badge text-bg-danger">Voters: {{movie.vote_count}}</span>
                   </div>
+                  <p>{{movie.overview.slice(0,100)}}...</p>
                 </div>
               </div>
             </div>
